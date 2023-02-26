@@ -79,6 +79,19 @@ func processNamesilo(lines []string) (domains [][]string) {
 	return domains
 }
 
+func processCloudflare(lines []string) (domains [][]string) {
+	chunks := misc.SplitArray(lines, 3)
+	var dateTimeRegexp = regexp.MustCompile(`\w+\s\d+,\s\d{4}`)
+	for _, v := range chunks {
+		var domain []string
+		domain = append(domain, v[0])
+		domain = append(domain, "")
+		domain = append(domain, dateTimeRegexp.FindString(v[2]))
+		domains = append(domains, domain)
+	}
+	return domains
+}
+
 func LoadData() (domains Response) {
 	dir := "data"
 
@@ -109,6 +122,10 @@ func LoadData() (domains Response) {
 
 			if strings.Contains(fileToLower, "namesilo") {
 				domains.Namesilo = processNamesilo(lines)
+			}
+
+			if strings.Contains(fileToLower, "cloudflare") {
+				domains.Cloudflare = processCloudflare(lines)
 			}
 		}
 
