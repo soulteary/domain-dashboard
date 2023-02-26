@@ -1,0 +1,6 @@
+body.enable-mosaic .mosaic {
+  color: transparent !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  filter: DXImageTransform.Microsoft.Blur(pixelradius=2) !important;
+  zoom: 1 !important;
+}
