@@ -12,3 +12,4 @@ You only need to **copy and paste** the content of the privoder domain list page
 
 - [Aliyun](https://dc.console.aliyun.com/#/domain-list/all)
 - [QCloud](https://console.cloud.tencent.com/domain/all-domain)
+- [NameSilo](https://www.namesilo.com/account_domains.php)

@@ -26,3 +26,10 @@ body.enable-mosaic .mosaic {
   right: 3px;
   top: 1px;
 }
+
+.card-body .icon-cloud-namesilo {
+  right: 6px;
+  top: 8px;
+  height: 30px;
+}
+

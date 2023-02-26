@@ -1,0 +1,2 @@
+abcd.com	(None)	brett.ns.cloudflare.com, rafe.ns.cloudflare.com	2022-03-14	2023-03-14	Active	This domain is currently lockedThis domain is privateThis domain will not be auto-renewedManage Email Forwarding for this domainManage DNS for this domainYour domain is not actively listed for saleThis domain is currently using custom DNS records
+	example.app	(None)	brett.ns.cloudflare.com, rafe.ns.cloudflare.com	2022-11-12	2023-11-12	Active

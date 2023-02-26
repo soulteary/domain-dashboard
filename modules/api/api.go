@@ -65,6 +65,20 @@ func processFavorite(lines []string) (domains []string) {
 	return domains
 }
 
+func processNamesilo(lines []string) (domains [][]string) {
+	for _, v := range lines {
+		item := strings.Split(v, "\t")
+		if misc.IsDomainName(item[0]) && len(item) >= 6 {
+			var domain []string
+			domain = append(domain, item[0])
+			domain = append(domain, item[3])
+			domain = append(domain, item[4])
+			domains = append(domains, domain)
+		}
+	}
+	return domains
+}
+
 func LoadData() (domains Response) {
 	dir := "data"
 
@@ -80,19 +94,21 @@ func LoadData() (domains Response) {
 				return err
 			}
 
+			lines := misc.GetLines(string(fileContent))
 			if strings.Contains(fileToLower, "favorite") {
-				lines := misc.GetLines(string(fileContent))
 				domains.Favorite = processFavorite(lines)
 			}
 
 			if strings.Contains(fileToLower, "aliyun") {
-				lines := misc.GetLines(string(fileContent))
 				domains.Aliyun = processAliyun(lines)
 			}
 
 			if strings.Contains(fileToLower, "qcloud") {
-				lines := misc.GetLines(string(fileContent))
 				domains.Qcloud = processQcloud(lines)
+			}
+
+			if strings.Contains(fileToLower, "namesilo") {
+				domains.Namesilo = processNamesilo(lines)
 			}
 		}
 
