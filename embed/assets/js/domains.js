@@ -15,7 +15,11 @@ function initApp() {
     container.append(moduleTitle("Providers") + generateProviders(providers));
     container.append(moduleTitle("Stats") + generateStats(domains));
 
-    container.append(moduleTitle("Pin Domains") + generateFavoriteCards(domains));
+    const favorites = domains.filter((data) => data.favorite);
+    if (favorites.length > 0) {
+      container.append(moduleTitle("Pin Domains") + generateFavoriteCards(domains));
+    }
+
     container.append(moduleTitle("Domains"));
     generateMiniCard(domains, container);
   });
@@ -33,7 +37,7 @@ function shimData(data) {
     .forEach((key) => {
       const dataset = data[key];
       const keyName = key.toLowerCase();
-      if (!dataset) return
+      if (!dataset) return;
       for (const item of dataset) {
         const [domain, , expires] = item;
         if (data.favorite.includes(domain)) {
@@ -92,7 +96,7 @@ function miniCardCircle(containerId, value) {
     }).render();
 }
 
-const moduleTitle = (title) => `<h3>${title}</h3>`;
+const moduleTitle = (title) => `<h2>${title}</h2>`;
 
 const getTotalDays = (from, dest) => {
   const DAY = 1000 * 60 * 60 * 24;
@@ -117,7 +121,7 @@ const generateFavoriteCards = (domains) => {
       <div class="card-body">
         <div class="row align-items-center">
           <div class="col-3">
-            <img src="assets/domains/${domain}.png" alt="${domain}" class="rounded" style="border: 1px solid #cdcdcd;">
+            <img src="/data/${domain}.png" alt="${domain}" class="rounded" style="border: 1px solid #cdcdcd;">
           </div>
           <div class="col">
             <h3 class="card-title mb-1">
@@ -197,6 +201,7 @@ const generateMiniCard = (domains, container) => {
           <div class="text-muted">
             ${percentage}% / ${expires}
           </div>
+          <img class="icon-cloud icon-cloud-${type}" src="/assets/img/${type}.svg">
         </div>
       </div>
     </div>

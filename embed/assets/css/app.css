@@ -4,3 +4,25 @@ body.enable-mosaic .mosaic {
   filter: DXImageTransform.Microsoft.Blur(pixelradius=2) !important;
   zoom: 1 !important;
 }
+
+.card-body {
+  position: relative;
+}
+
+.card-body .icon-cloud {
+  position: absolute;
+  height: 50%;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+.card-body .icon-cloud-qcloud {
+  height: 24px;
+  right: 6px;
+}
+
+.card-body .icon-cloud-aliyun {
+  right: 3px;
+  top: 1px;
+}
