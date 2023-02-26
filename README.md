@@ -1,6 +1,12 @@
-# domain-dashboard
+# Domain Dashboard
 
+You only need to **copy and paste** the content of the privoder domain list page, then you will get the full domain list.
 
+## Screenshots
+
+<img src="./screenshots/webui-desktop.png" width="80%">
+
+<img src="./screenshots/webui-mobile.png" width="50%">
 
 ## Provider
 
