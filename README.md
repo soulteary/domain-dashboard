@@ -2,6 +2,12 @@
 
 You only need to **copy and paste** the content of the privoder domain list page, then you will get the full domain list.
 
+## Download
+
+```bash
+docker pull soulteary/domain-dashboard:v0.1.0
+```
+
 ## Screenshots
 
 <img src="./screenshots/webui-desktop.png" width="80%">
