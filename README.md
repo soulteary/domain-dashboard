@@ -5,7 +5,7 @@ You only need to **copy and paste** the content of the privoder domain list page
 ## Download
 
 ```bash
-docker pull soulteary/domain-dashboard:v0.1.0
+docker run --rm -it -p 3000:3000 -v `pwd`/embed:/embed -v `pwd`/data:/data soulteary/domain-dashboard:v0.1.1
 ```
 
 ## Screenshots
